@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>Image Slideshow</title></head>
+<body>
+  <h2>Galeri Gambar</h2>
+  <img id="slideshow-image" src="" alt="Slideshow" width="500">
+  <br>
+  <button onclick="gantiGambar(-1)">Previous</button>
+  <button onclick="gantiGambar(1)">Next</button>
+
+  <script>
+    var gambar = [
+      "https://4.bp.blogspot.com/-ZjyKjcB-_Fw/W7FcewRj54I/AAAAAAAAI3M/RcNpHGEUvucK5sQWTqqcjipo13L3E90WQCLcBGAs/s1600/gambar%2Bkucing%2Bpaling%2Bcomel.jpg",
+      "https://2.bp.blogspot.com/-6zrM4tHh6RI/W7FbIDpwq2I/AAAAAAAAI3A/9vmRuW93At4tlrN9ClJkrKaiWi19utwTgCLcBGAs/s1600/gambar%2Bkucing%2Bcomel.jpg",
+      "https://1.bp.blogspot.com/-cTYzciChmfE/V5bsWCb0xXI/AAAAAAAACWw/lbbnQpulaZQbee5U3Dq_4xHCy649GYfzQCLcB/s1600/Gambar-kucing-27.jpg"
+    ];
+    var indexGambar = 0;
+    var imageElement = document.getElementById("slideshow-image");
+
+    function tampilkanGambar() {
+      imageElement.src = gambar[indexGambar];
+    }
+
+    function gantiGambar(arah) {
+      indexGambar += arah;
+      // Jika sudah gambar terakhir, kembali ke awal
+      if (indexGambar >= gambar.length) {
+        indexGambar = 0;
+      }
+      // Jika sudah gambar pertama dan menekan previous, pergi ke akhir
+      if (indexGambar < 0) {
+        indexGambar = gambar.length - 1;
+      }
+      tampilkanGambar();
+    }
+
+    // Tampilkan gambar pertama saat halaman dimuat
+    tampilkanGambar();
+  </script>
+</body>
+</html>

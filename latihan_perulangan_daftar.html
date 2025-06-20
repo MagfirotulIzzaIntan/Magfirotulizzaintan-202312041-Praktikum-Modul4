@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Latihan Perulangan</title></head>
+<body>
+  <h2>Nama Mahasiswa</h2>
+  <ul id="daftar-matkul">
+    <!-- Konten akan diisi oleh JavaScript -->
+  </ul>
+
+  <script>
+    var matkul = ["Nur Maulida Putri", "Apprielliana Putri", "Nadiva Adelia", "Sarah Triana"];
+    var daftarElement = document.getElementById("daftar-matkul");
+    for (let i = 0; i < matkul.length; i++) {
+      daftarElement.innerHTML += "<li>" + matkul[i] + "</li>";
+    }
+  </script>
+</body>
+</html>
